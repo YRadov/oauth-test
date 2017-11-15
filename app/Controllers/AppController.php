@@ -9,6 +9,7 @@ class AppController {
 	public function actionIndex() {
 		$auth_url     = AUTH_URL;
 		$redirect_uri = REDIRECT_URL;
+		$get_code_2   = APP_URL . 'app/code';
 
 		$fb_auth_url = FB_OAUTH;
 		$client_id   = FB_APP_ID;
@@ -19,6 +20,7 @@ class AppController {
 			'redirect_uri' => $redirect_uri,
 			'fb_auth_url'  => $fb_auth_url,
 			'client_id'    => $client_id,
+			'get_code_2'   => $get_code_2,
 		] );
 	}//actionIndex
 
@@ -44,4 +46,16 @@ class AppController {
 	}//actionConfirmed
 
 
+	public function actionCode() {
+		$query = http_build_query( [
+			'redirect_url'  => REDIRECT_URL,
+			//'response_type' => 'code',
+			//'client_id'     => CLIENT_ID,
+		] );
+
+		$url = AUTH_URL . '?' . $query;
+
+		header( 'Location: ' . $url );
+		exit();
+	}//actionCode
 }//AppController

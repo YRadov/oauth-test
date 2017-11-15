@@ -11,5 +11,9 @@
         <a href="{{fb_auth_url}}?client_id={{client_id}}&redirect_uri={{redirect_uri}}" class="btn btn-lg btn-success btn-block">Вход FB</a>
     </div>
 
+    <div class="form-signin">
+        <a href="{{get_code_2}}" class="btn btn-lg btn-success btn-block">Вход 2</a>
+    </div>
+
 </div> <!-- /container -->
 {% endblock %}
