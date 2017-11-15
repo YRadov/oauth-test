@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Components\View;
+use GuzzleHttp\Client;
 
 class AppController {
 
@@ -41,8 +42,22 @@ class AppController {
 				. urldecode( http_build_query( $params ) )
 			), true );
 			debug( $access_token );
-
 		}
+
+
+//		$http = new Client();
+//		$response = $http->post(TOKEN_URL, [
+//			'form_params' => [
+//				'grant_type' => 'authorization_code',
+//				'client_id' => CLIENT_ID,
+//				'client_secret' => CLIENT_SECRET,
+//				'redirect_uri' => REDIRECT_URL,
+//				'code' => $code,
+//			],
+//		]);
+//
+//		$tokens = json_decode((string) $response->getBody(), true);
+//		debug( $tokens );
 	}//actionConfirmed
 
 
