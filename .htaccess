@@ -1,5 +1,9 @@
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+</IfModule>
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ public/index.php [QSA]
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^.*$ public/index.php [QSA]
+</IfModule>
